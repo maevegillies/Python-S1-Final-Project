@@ -1,8 +1,3 @@
-**Alarm Clock: S1 Final Project**
-
-
-
-**Code**
 #imports libraries needed to turn on the speaker, LCD, and the LED
 from signal import signal, SIGTERM, SIGHUP, pause
 from rpi_lcd import LCD
