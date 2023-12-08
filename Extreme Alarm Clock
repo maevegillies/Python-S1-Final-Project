@@ -1,0 +1,235 @@
+**Alarm Clock: S1 Final Project**
+
+
+
+**Code**
+#imports libraries needed to turn on the speaker, LCD, and the LED
+from signal import signal, SIGTERM, SIGHUP, pause
+from rpi_lcd import LCD
+#imports the LCD function so the Raspberry Pi can use it
+import datetime as dt
+#imports the datetime module so the current time can be used
+from time import sleep
+#imports the sleep() function from the time module so the time changes can be displayed
+import datetime
+import time
+import RPi.GPIO as GPIO
+#turns the GPIO pins on/off
+
+GPIO.setmode(GPIO.BCM)
+#Sets the GPIO to input/output
+GPIO.setwarnings(False)
+#Disables warnings because the pins being used have already been set up
+
+BuzzerPin = 4
+#Sets the buzzer to GPIO pin 4
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(BuzzerPin, GPIO.OUT)
+#Turns on GPIO pin #4
+GPIO.setwarnings(False)
+global Buzz
+Buzz = GPIO.PWM(BuzzerPin, 440)
+#Sets the frequency to 440hz
+Buzz.start(50)
+
+def speaker():
+#Makes speaker a function
+
+
+    B0=31
+    C1=33
+    CS1=35
+    D1=37
+    DS1=39
+    E1=41
+    F1=44
+    FS1=46
+    G1=49
+    GS1=52
+    A1=55
+    AS1=58
+    B1=62
+    C2=65
+    CS2=69
+    D2=73
+    DS2=78
+    E2=82
+    F2=87
+    FS2=93
+    G2=98
+    GS2=104
+    A2=110
+    AS2=117
+    B2=123
+    C3=131
+    CS3=139
+    D3=147
+    DS3=156
+    E3=165
+    F3=175
+    FS3=185
+    G3=196
+    GS3=208
+    A3=220
+    AS3=233
+    B3=247
+    C4=262
+    CS4=277
+    D4=294
+    DS4=311
+    E4=330
+    F4=349
+    FS4=370
+    G4=392
+    GS4=415
+    A4=440
+    AS4=466
+    B4=494
+    C5=523
+    CS5=554
+    D5=587
+    DS5=622
+    E5=659
+    F5=698
+    FS5=740
+    G5=784
+    GS5=831
+    A5=880
+    AS5=932
+    B5=988
+    C6=1047
+    CS6=1109
+    D6=1175
+    DS6=1245
+    E6=1319
+    F6=1397
+    FS6=1480
+    G6=1568
+    GS6=1661
+    A6=1760
+    AS6=1865
+    B6=1976
+    C7=2093
+    CS7=2217
+    D7=2349
+    DS7=2489
+    E7=2637
+    F7=2794
+    FS7=2960
+    G7=3136
+    GS7=3322
+    A7=3520
+    AS7=3729
+    B7=3951
+    C8=4186
+    CS8=4435
+    D8=4699
+    DS8=4978
+    #Sets the notes to different frequencies
+
+    song = [
+    G4,
+    E4, F4, G4, G4, G4,
+    A4, B4, C5, C5, C5,
+    E4, F4, G4, G4, G4,
+    A4, G4, F4, F4,
+    E4, G4, C4, E4,
+    D4, F4, B3,
+    C4
+    ]
+    #makes the song using a list and info from the notes variables
+    beat = [
+    8,
+    8, 8, 4, 4, 4,
+    8, 8, 4, 4, 4,
+    8, 8, 4, 4, 4,
+    8, 8, 4, 2,
+    4, 4, 4, 4,
+    4, 2, 4,
+    1
+    ]
+    f = 0
+    while True:
+        for i in range(1, len(song)):
+            #iterates through the song list
+            Buzz.ChangeFrequency(song[i])
+            #Changes the frequency
+            time.sleep(beat[i]*0.13)
+            #Stays on the note for 0.13 seconds
+            f += 1
+            #for every beat, 1 is added to f. This makes a counter
+            if f == 25:
+                #25 beats have passed (the length of the song playing once)
+                light = True
+                while light == True:
+                    #Loops turning the LED on and off
+                    GPIO.setup(26,GPIO.OUT)
+                    GPIO.output(26,GPIO.HIGH)
+                    time.sleep(0.25)
+                    #Turns light on and off every 0.25 seconds
+                    GPIO.output(26,GPIO.LOW)
+                    time.sleep(0.25)
+        return speaker()
+
+def main():
+    lcd = LCD()
+    #Used so LCD can be used inside the rest of the code
+    def safe_exit(signum, frame):
+        exit(1)
+    signal(SIGTERM, safe_exit)
+    signal(SIGHUP, safe_exit)
+    #Exits if there is an issue with the LCD signal
+    try:
+            minute_count = 0
+            invalid = True
+            while(invalid):
+                lcd.text("Set Alarm:", 1)
+                #Displays setting the alarm on the first line of the LCD
+                userInput = (input(">> "))
+                #Asks for user input from the terminal
+                lcd.text("Alarm set!", 1)
+                #Displays that the alarm is set
+                lcd.text(userInput, 2)
+                #Displays the user input on the second line of the LCD
+                time.sleep(3)
+                #Displays the user input on the LCD for three seconds
+
+                lcd.text("The time is:", 1)
+                #Constantly displays what the time is until the user input time is reached
+                t = dt.datetime.now()
+                #t is the datetime function
+                while True:
+                    delta_minutes = (dt.datetime.now() -t).seconds
+                    if delta_minutes != minute_count:
+                        t = dt.datetime.now()
+                        lcd.text(str(t).split(" ")[1].split(".")[0], 2)
+                        #Time displayed on the LCD as HH:MM:SS, excludes milliseconds
+                        user = (str(userInput).split(":")[0])
+                        #Indexes at only the houers (HH) the user inputted
+                        t2 = str(t).split(" ")[1].split(".")[0].split(":")[0]
+                        #Indexes at only the hours of the current time
+                        if t2 == user:
+                            #Checks if the input time and the computer's time are equal
+                            user = (str(userInput).split(":")[1])
+                            #Indexes at the user input at minutes
+                            t2 = str(t).split(" ")[1].split(".")[0].split(":")[1]
+                            #Indexes at the computer's minutes
+                            if t2 == user:
+                                #Checks if the input and the computer's minute time are equal1
+                                lcd.text("WAKE UP", 2)
+                                z = True
+                                while z:
+                                    #The speaker continiously plays until snoozed (Keyboard Interrupt)
+                                    speaker()
+                        minute_count = delta_minutes
+
+
+    except KeyboardInterrupt:
+            lcd.text("Snooze", 2)
+            #Displays "Snooze" on LCD line two for 3 seconds
+            time.sleep(3)
+            pass
+    finally:
+            lcd.clear()
+            #Ends the program
