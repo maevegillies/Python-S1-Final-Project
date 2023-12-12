@@ -245,3 +245,10 @@ def main():
             lcd.clear()
             #Ends the program
 ```
+## References
+- Setting up the LCD
+  https://youtu.be/zC3i3CbKZfw?si=q3URboMG_x9hNKqF
+- Setting up the Speaker
+  https://www.circuitbasics.com/how-to-use-buzzers-with-raspberry-pi
+- Setting up the LED
+  https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins
