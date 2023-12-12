@@ -245,8 +245,6 @@ def main():
             lcd.clear()
             #Ends the program
 ```
-```
-```
 ## References
 - Setting up the LCD
   https://youtu.be/zC3i3CbKZfw?si=q3URboMG_x9hNKqF
