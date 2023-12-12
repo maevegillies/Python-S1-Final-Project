@@ -5,9 +5,9 @@ Email: maeveg772@lpsk12.org
 
 ## About Me
 
-Last year, my brother left for Florida to study computer science. Before he switched out of CS in favor for architechure, I remember seeing the lines of Javascript code on his computer. What he was writing was 
+Last year, my brother left for Florida to study computer science. Before he switched his major to architechure, I remember seeing the lines of Javascript code on his computer. I wondered "how could I do that?".
 
-
+I am proficient in Python and the hardware of the Raspberry Pi. 
 * Tell your site viewers more about yourself.
 * What skills, talents, and knowledge do you have? What do you like learning about?
 ### Strengths
