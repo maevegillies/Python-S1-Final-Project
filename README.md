@@ -6,6 +6,11 @@ This alarm clock is if you don't like waking up in the morning! It uses an LCD t
 The purpose of my project was to create something fun and adds on to something that already exists. In the future, I would like to add a pulse monitor that determines whether the person has woken up or not, as well as touch sensors to better control what time someone would like to set their alarm to (on the LCD, rather than the terminal). 
 
 ## Wiring
+![IMG_4403(1)](https://github.com/maevegillies/Python-S1-Final-Project/assets/143544659/de11d6a9-19ed-4411-b836-efee8a17d2e9)
+
+- The LED is connected to GND and GPIO pin #26
+- The LCD is connected to 5v, SDA, SCL, and GPIO pin #17
+- The speaker is connected to GPIO pin #4, GND, and 5v
 
 ## Code
 ```
