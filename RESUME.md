@@ -7,13 +7,12 @@ Email: maeveg772@lpsk12.org
 
 Last year, my brother left for Florida to study computer science. Before he switched his major to architechure, I remember seeing the lines of Javascript code on his computer. I wondered "how could I do that?".
 
-I am proficient in Python and the hardware of the Raspberry Pi. 
-* Tell your site viewers more about yourself.
+I am proficient in Python and the hardware of the Raspberry Pi.
 * What skills, talents, and knowledge do you have? What do you like learning about?
 ### Strengths
-- What are some of your strengths?
+- * What are some of your strengths?
 ### Goals
-- What skills are you working on?
+- * What skills are you working on?
 
 ---
 ## EPIC Experience
