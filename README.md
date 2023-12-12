@@ -1,12 +1,14 @@
-# Python-S1-Final-Project
-
+# Alarm Clock
 
 ## Introduction
-sdlkdskjlfjsl
+This alarm clock is if you don't like waking up in the morning! It uses an LCD to display the time, asks for an input to set the alarm, and has a speaker as well as an LED to keep you awake.
+
+The purpose of my project was to create something fun and adds on to something that already exists. In the future, I would like to add a pulse monitor that determines whether the person has woken up or not, as well as touch sensors to better control what time someone would like to set their alarm to (on the LCD, rather than the terminal). 
 
 ## Wiring
 
 ## Code
+```
 #imports libraries needed to turn on the speaker, LCD, and the LED
 from signal import signal, SIGTERM, SIGHUP, pause
 from rpi_lcd import LCD
@@ -237,3 +239,4 @@ def main():
     finally:
             lcd.clear()
             #Ends the program
+```
