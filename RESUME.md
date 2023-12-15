@@ -34,4 +34,4 @@ I attended SC23.
 Morse Code was a project designed to help our class learn about proper documentation. Using the Raspberry Pi and Obsidian, I wrote code that would turn an LED on and off. From this, I developed proper research and documentation practices that I applied to later projects. 
 
 - Final Project - https://github.com/maevegillies/Python-S1-Final-Project
-My final project was an extreme alarm clock. Its purpose was to create something inventive without being hard to understand, which I achieved only using the Pi, a speaker, and a LCD.
+My final project was an extreme alarm clock. Its purpose was to create something inventive without being hard to understand, which I achieved only using the Pi, a speaker, and an LCD.
