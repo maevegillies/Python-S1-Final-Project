@@ -1,12 +1,13 @@
 # Maeve Gillies
 Pronouns: she/her
 
-Email: maeveg772@lpsk12.org
+Email: maevegillies86@gmail.com
 
 ## About Me
 
-Last year, my brother left for Florida to study computer science. Before he switched his major to architechure, I remember seeing the lines of Javascript code on his computer. I wondered "how could I do that?".
-I am proficient in Python, the hardware of the Raspberry Pi, and basic circuitry. In my free time, I like learning about the world of AI and how it can be implimented to benefit life. 
+My name is Maeve and I am a Sophomore at Heritage High School. I am interested in the world of computer science, specifically data science and machine learning. In my free time, I like to draw and play video games!
+
+
 
 ### Strengths
 
@@ -14,7 +15,7 @@ I am able to collaborate with my peers to develop new ideas or solve complex iss
 
 ### Goals
 
-I am working on obtaining my Python Certified Entry-Level Programmer (PCEP) certificate and becoming proficient in JavaScript.
+I am working on personal projects, including ML projects and game design. 
 
 ## EPIC Experience
 
@@ -27,7 +28,7 @@ I am working on obtaining my Python Certified Entry-Level Programmer (PCEP) cert
 Through my first semester at EPIC, I learned the value of developing problem solving skills and communication. Not only did skills help me develop a stronger foundation in computer science, but they are also applicable to other schoolwork and job-related areas. 
 
 ### Professional Experiences
-I attended SC23.
+I attended SC23 and participated in a tour at Google Boulder.
 
 ## Projects: 
 -  Morse Code - https://github.com/maevegillies/Morse-Code
